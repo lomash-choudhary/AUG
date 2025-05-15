@@ -8,9 +8,10 @@ if(cluster.isPrimary){
     for(let i = 0; i < numberOfCPUS; i++){
         cluster.fork();
     }
+    setInterval(() => {}, 1000)
 } else{
     app.listen(3000, () => {
         console.log(`Woker with pid : ${process.pid}`)
-        // console.log(`App is listening on http://localhost:3000`)
+        console.log(`App is listening on http://localhost:3000`)
     })
 }
